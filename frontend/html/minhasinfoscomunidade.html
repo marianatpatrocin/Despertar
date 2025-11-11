@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar - Informações da Comunidade</title>
+    <link rel="stylesheet" href="minhasinfoscomunidade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <a href="inicio.html">
+            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
+        </a>
+
+        <div id="menu-container">
+            <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon">
+            <div id="dropdown-menu">
+                <a href="comunidade.html">Página Inicial</a>
+                <a href="">Chat</a>
+                <a href="transformandovidas.html">Relatos</a>
+                <a href="inicio.html">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1>Informações da Comunidade</h1>
+
+        <section class="community-card">
+            <div class="community-header">
+                <img src="/frontend/assets/comunidade.jpeg" alt="Imagem da Comunidade" class="community-pic">
+                <div class="community-info">
+                    <h2>Comunidade Vila Feliz</h2>
+                    <p>Membro desde: [Data]</p>
+                </div>
+            </div>
+
+            <div class="community-details">
+                <h3>Descrição</h3>
+                <p class="community-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus deleniti, architecto possimus ullam modi sapiente accusamus voluptate totam sed qui adipisci cum praesentium, magnam esse quibusdam voluptatum eaque pariatur nemo.</p>
+
+                <h3>Dados de Interesse</h3>
+                <div class="info-item">
+                    <span class="info-label">Localização:</span>
+                    <p class="info-value">Bairro Central, Rua da Esperança, 456</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Número de Crianças:</span>
+                    <p class="info-value">Aproximadamente 50 crianças</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Faixa Etária:</span>
+                    <p class="info-value">6 a 15 anos</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Estrutura Física:</span>
+                    <p class="info-value">Temos 3 salas de aula, 1 quadra coberta e 1 biblioteca</p>
+                </div>
+                <div class="profile-actions">
+                    <button class="btn-edit" onclick="toggleEditMode()">Editar Perfil</button>
+                    <button class="btn-save" style="display: none;">Salvar Alterações</button>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="minhasinfoscomunidade.js"></script>
+</body>
+
+</html>

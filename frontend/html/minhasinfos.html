@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar - Minhas Informações</title>
+    <link rel="stylesheet" href="minhasinfos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="inicio.html">
+            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
+        </a>
+        
+        <div id="menu-container">
+            <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon">
+            <div id="dropdown-menu">
+            <a href="voluntario.html">Página Inicial</a>
+            <a href="">Chat</a>
+            <a href="">Próximas atividades perto de mim</a>
+            <a href="transformandovidas.html">Relatos</a>
+            <a href="inicio.html">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1>Meu Perfil</h1>
+
+        <section class="profile-card">
+            <div class="profile-header">
+                <img src="/frontend/assets/perfil.webp" class="profile-pic">
+                <div class="profile-info">
+                    <h2 id="profile-name">Nome do Voluntário</h2>
+                    <p id="profile-email">exemplo@email.com</p>
+                </div>
+            </div>
+            
+            <div class="profile-details">
+                <div class="info-item">
+                    <span class="info-label">Telefone:</span>
+                    <p class="info-value" id="profile-phone">(XX) XXXXX-XXXX</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Endereço:</span>
+                    <p class="info-value" id="profile-address">Rua do Exemplo, 123</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Data de Nascimento:</span>
+                    <p class="info-value" id="profile-dob">DD/MM/AAAA</p>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Cidade:</span>
+                    <p class="info-value" id="profile-city">Cidade Exemplo</p>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <button class="btn-edit" onclick="toggleEditMode()">Editar Perfil</button>
+                <button class="btn-save" style="display: none;">Salvar Alterações</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="minhasinfos.js"></script>
+</body>
+</html>

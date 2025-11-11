@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar - Painel da comunidade</title>
+    <link rel="stylesheet" href="comunidade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <a href="inicio.html">
+            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
+        </a>
+        
+        <div id="menu-container">
+            <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon">
+            <div id="dropdown-menu">
+                <a href="inicio.html">Página Inicial</a>
+                <a href="minhasinfoscomunidade.html">Informações da comunidade</a>
+                <a href="transformandovidas.html">Relatos</a>
+                <a href="inicio.html">Sair</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1>Minha comunidade</h1>
+
+        <section class="admin-panel">
+            <div class="panel-header">
+                <h2>Atividades da Comunidade</h2>
+                <button class="btn-criar-atividade">Criar Nova Atividade</button>
+            </div>
+            
+            <div class="lista-atividades-admin">
+                <div class="atividade-item-admin">
+                    <div class="atividade-info">
+                        <h3>Oficina de Leitura</h3>
+                        <p><strong>Data:</strong> 25/08/2025</p>
+                        <p><strong>Local:</strong> Biblioteca Municipal</p>
+                        <p><strong>Voluntários Inscritos:</strong> 12</p>
+                    </div>
+                    <div class="atividade-actions">
+                        <button class="btn-action editar">Editar</button>
+                        <button class="btn-action deletar">Deletar</button>
+                    </div>
+                </div>
+
+                <div class="atividade-item-admin">
+                    <div class="atividade-info">
+                        <h3>Visita à Escola X</h3>
+                        <p><strong>Data:</strong> 20/08/2025</p>
+                        <p><strong>Local:</strong> Minha comunidade</p>
+                        <p><strong>Voluntários Inscritos:</strong> 8</p>
+                    </div>
+                    <div class="atividade-actions">
+                        <button class="btn-action editar">Editar</button>
+                        <button class="btn-action deletar">Deletar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+<script src="comunidade.js"></script>
+</body>
+</html>

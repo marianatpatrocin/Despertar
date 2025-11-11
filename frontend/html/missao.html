@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar</title>
+    <link rel="stylesheet" href="missao.css">
+</head>
+
+<body>
+    <section class="pag1">
+        <header>
+            <a href="inicio.html"> <img src="/frontend/assets/logodespertar.png" class="logo" alt=""></a>
+        </header>
+        <div class="content">
+            <h2>NOSSA MISSÃO</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur nisl nec dapibus
+                ullamcorper. Proin tempor turpis sit amet odio sollicitudin rutrum.</p>
+            <button id="saibaMais">SAIBA MAIS</button>
+        </div>
+        <div class="imgmissao">
+            <img src="/frontend/assets/missao.png" alt="">
+        </div>
+    </section>
+
+    <section class="pag2" id="pag2">
+        <div class="content-wrapper">
+            <div class="content">
+                <h2>Nossa Missão</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur nisl nec dapibus
+                    ullamcorper. Proin tempor turpis sit amet odio sollicitudin rutrum. Mauris suscipit eget ante eget
+                    tristique. Vivamus porta urna arcu. Class aptent taciti sociosqu ad litora torquent per conubia
+                    nostra, per inceptos himenaeos. Integer sodales quis ipsum at laoreet. Donec bibendum ex molestie,
+                    finibus mi quis, ornare tellus. Vivamus sed risus a sapien molestie mollis. Pellentesque enim
+                    lectus, gravida nec erat at, euismod eleifend diam. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Pellentesque consectetur nisl nec dapibus ullamcorper. Proin tempor turpis sit amet
+                    odio sollicitudin rutrum. Mauris suscipit eget ante eget tristique. Vivamus porta urna arcu. Class
+                    aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+            </div>
+
+            <div class="links">
+                <a href="#" class="botao1">
+                    <div class="circulo">
+                        <img src="/frontend/assets/calendario.png" alt="Próximas atividades">
+                    </div>
+                    <p>Próximas atividades</p>
+                </a>
+                <a href="#" class="botao2">
+                    <div class="circulo">
+                        <img src="/frontend/assets/contribuição.png" alt="Como posso contribuir?">
+                    </div>
+                    <p>Como posso contribuir?</p>
+                </a>
+                <a href="#" class="botao3">
+                    <div class="circulo">
+                        <img src="/frontend/assets/voluntariado.png" alt="O que é voluntariado?">
+                    </div>
+                    <p>O que é voluntariado?</p>
+                </a>
+            </div>
+        </div>
+        
+        <img src="/frontend/assets/aviao.png" id="aviao">
+    </section>
+
+
+    <script>
+        const button = document.getElementById('saibaMais');
+        const pag2 = document.getElementById('pag2');
+
+        button.addEventListener('click', () => {
+            pag2.classList.toggle('ativa');
+            pag2.scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+
+</html>

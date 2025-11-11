@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro comunidade</title>
+    <link rel="stylesheet" href="cadastros.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="cadastro-page">
+    <header>
+       <a href="inicio.html"><img src="/frontend/assets/logodespertar.png" alt="Logo Despertar" class="logo"> </a> 
+    </header>
+
+    <main class="cadastro">
+        <h2>CADASTRE-SE SUA COMUNIDADE</h2>
+        <form>
+            <div class="campo">
+                <label for="email">Digite seu e-mail</label>
+                <input type="email" id="email" placeholder="E-mail">
+            </div>
+
+            <div class="campo">
+                <label for="nome">Digite o nome da sua comunidade/bairro</label>
+                <input type="text" id="nome_comunidade" placeholder="Nome da comunidade">
+            </div>
+
+            <div class="campo">
+                <label for="nome">Digite o nome do responsável pela comunidade(quem está criandoa conta)</label>
+                <input type="text" id="nome_responsavel" placeholder="Nome do Responsável">
+            </div>
+
+            <div class="campo">
+                <label for="telefone">Digite seu telefone</label>
+                <input type="tel" id="telefone" placeholder="Telefone">
+            </div>
+
+            <div class="campo">
+                <label for="endereco">Qual o seu endereço</label>
+                <input type="text" id="endereco" placeholder="Endereço">
+            </div>
+
+            <div class="campo">
+                <label for="descricao">Conte sobre sua comunidade</label>
+                <textarea id="descricao" placeholder="Fale um pouco sobre sua comunidade"></textarea>
+            </div>
+
+            <div class="campo">
+                <label for="senha">Defina sua senha</label>
+                <input type="password" id="senha" placeholder="Senha">
+            </div>
+
+            <button type="button" class="botao">CADASTRAR</button>
+        </form>
+    </main>
+    <script src="cadastrocomunidade.js"></script>
+</body>
+</html>
