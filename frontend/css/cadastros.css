@@ -1,109 +1,187 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    padding-top: 100px;
-    font-family: 'Poppins', sans-serif;
-    background-color: #fdfaf0; 
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+  padding-top: 110px;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdfaf0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
 }
 
+/* HEADER */
 header {
-    display: flex;
-    justify-content: left;
-    padding: 10px 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fdfaf0;
-    z-index: 1000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fdfaf0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo {
-    height: 80px;
-    width: auto;
+  height: 80px;
+  width: auto;
 }
 
+/* CARD DO FORMULÁRIO */
 .cadastro {
-    background-color: #f6dec1;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 450px;
-    text-align: left;
-    margin: auto; 
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 45px;
+  width: 100%;
+  max-width: 550px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  border: 3px solid #ff931f33; /* borda sutiiil com a cor da home */
+  animation: fadeIn 0.4s ease;
 }
 
+/* TÍTULO */
 h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 25px;
-    font-weight: 700;
-    text-align: center;
+  font-size: 29px;
+  color: #1d1d1d;
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
+/* FORM */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.campo {
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 label {
-    text-align: left;
-    display: block;
-    font-weight: 700;
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #555;
-    text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #333;
 }
 
+/* CAMPOS MODERNOS */
 input,
-textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #fff;
+textarea,
+select {
+  width: 100%;
+  padding: 15px 16px;
+  border: 2px solid #e5e5e5;
+  border-radius: 14px;
+  font-size: 15px;
+  background-color: #fff;
+  transition: 0.25s ease;
 }
 
-textarea {
-    resize: none;
-    height: 100px; 
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #ff931f; 
+  box-shadow: 0 0 0 4px rgba(255,147,31,0.15);
 }
 
+/* TEXTAREA */
+textarea {
+  resize: none;
+  height: 110px;
+}
+
+/* UPLOAD FOTO */
+.foto-upload {
+  margin-top: 10px;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 2px dashed #ff931f88;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.foto-upload:hover {
+  background-color: #fff8f0;
+  border-color: #ff931f;
+}
+
+.foto-preview {
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ff931faa;
+  background-color: #f7f7f7;
+}
+
+/* BOTÃO */
 button {
-    width: 100%; 
-    background: #40E0D0;
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 15px;
-    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  background: #ff931f;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+  font-size: 15px;
 }
 
 button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 rgba(0,0,0,0.18);
+}
+
+/* FORM FORMAÇÃO OPCIONAL */
+#campoFormacao {
+  display: none;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  body {
+    padding-top: 90px;
+  }
+
+  header {
+    padding: 15px 25px;
+  }
+
+  .cadastro {
+    width: 92%;
+    padding: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cadastro {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 23px;
+  }
+
+  button {
+    padding: 14px;
+  }
 }

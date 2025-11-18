@@ -1,100 +1,137 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     background-color: #fdfaf0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    padding-top: 90px;
 }
 
+/* HEADER */
 header {
     display: flex;
     justify-content: left;
+    align-items: center;
     padding: 10px 50px;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #fdfaf0;
     z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
 }
 
 .logo {
-    height: 80px;
+    height: 75px;
     width: auto;
 }
 
-
+/* LOGIN CARD */
 .login-container {
-    background-color: #f6dec1;
-    border-radius: 15px;
+    background-color: #ffffff;
+    border-radius: 26px;
     padding: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     width: 100%;
-    max-width: 450px;
+    max-width: 430px;
     text-align: center;
+    border: 3px solid #ff931f33;
+    animation: fadeIn 0.4s ease;
 }
 
+/* TÍTULO */
 h1 {
     font-size: 28px;
-    color: #333;
+    color: #1d1d1d;
     margin-bottom: 25px;
-    font-weight: 700;
+    font-weight: 800;
+    text-transform: uppercase;
 }
 
+/* FORM */
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
 }
 
+/* LABELS */
 label {
     align-self: flex-start;
     font-size: 14px;
-    color: #555;
-    font-weight: 700;
+    color: #333;
+    font-weight: 600;
     text-transform: uppercase;
 }
 
+/* INPUTS */
 input {
     width: 100%;
     padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
+    border: 2px solid #e5e5e5;
+    border-radius: 14px;
+    font-size: 15px;
     background-color: #fff;
+    transition: 0.25s ease;
 }
 
+input:focus {
+    border-color: #ff931f;
+    box-shadow: 0 0 0 4px rgba(255, 147, 31, 0.15);
+}
+
+/* BOTÃO IGUAL AO DA HOME/CADASTRO */
 .botao-entrar {
-    background: #40E0D0; 
+    background: #ff931f;
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
-    padding: 15px;
+    padding: 16px;
     border: none;
-    border-radius: 8px;
+    border-radius: 14px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
     margin-top: 15px;
-    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.15);
 }
 
 .botao-entrar:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.18);
 }
 
+/* LINK DE CADASTRO */
 .link-cadastro {
     display: block;
     margin-top: 25px;
-    color: #ff8001; 
+    color: #ff931f;
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .link-cadastro:hover {
-    color: #ffa500;
+    color: #ffa84a;
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 23px;
+    }
 }

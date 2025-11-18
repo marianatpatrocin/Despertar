@@ -28,10 +28,8 @@ async function fazerLogin(event) {
         if (response.ok) {
             alert(results.message);
 
-            // Salva os dados do usuário no localStorage
             localStorage.setItem('usuarioLogado', JSON.stringify(results.usuario));
 
-            // Redirecionamento baseado no tipo de usuário
             if (results.usuario.tipo === 'voluntario') {
                 window.location.href = 'minhasinfos.html';
             } else if (results.usuario.tipo === 'comunidade') {

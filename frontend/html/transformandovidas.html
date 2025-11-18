@@ -1,69 +1,49 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despertar - Transformando Vidas</title>
-    <link rel="stylesheet" href="transformandovidas.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Despertar - Transformando Vidas</title>
+  <link rel="stylesheet" href="/frontend/css/transformandovidas.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
+  <header>
+    <a href="inicio.html">
+      <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar" />
+    </a>
+  </header>
 
-    <header>
-        <a href="inicio.html">
-            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
-        </a>
-    </header>
-
-    <main class="main-container">
+  <main class="main-container">
     <h1>Transformando Vidas</h1>
     <h2 class="subtitulo">Relatos que Transformam</h2>
 
-    <img src="/frontend/assets/aviao.png" alt="Avião de papel" class="aviao">
-    
-    <a href="#" class="btn-adicionar">
-        <span class="simbolo-mais">+</span>
-        Adicionar Relato
+    <img src="/frontend/assets/aviao.png" alt="Avião de papel" class="aviao" />
+
+    <a href="#" class="btn-adicionar" id="btnAbrirModal">
+      <span class="simbolo-mais">+</span>
+      Adicionar Relato
     </a>
 
-    <div class="relatos-container">
-        <div class="relato-item">
-            <div class="relato-imagem">
-                <img src="/frontend/assets/feedbacks.jpg" alt="Relato de usuário">
-            </div>
-            <div class="relato-texto">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur nisl nec dapibus ullamcorper. Proin tempor turpis sit amet odio sollicitudin rutrum. Mauris suscipit eget ante eget tristique. Vivamus porta urna arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sodales quis ipsum at laoreet. Donec bibendum ex molestie, finibus mi quis, ornare tellus. Vivamus sed risus a sapien molestie mollis. Pellentesque enim lectus, gravida nec erat at, euismod eleifend diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur nisl nec dapibus ullamcorper. Proin tempor turpis sit amet odio sollicitudin rutrum. Mauris suscipit eget ante eget tristique. Vivamus porta urna arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-                <div class="relato-autor">
-                    <p>- João da Silva</p>
-                </div>
-            </div>
-        </div>
+   <div id="modalRelato" class="modal hidden">
+  <div class="modal-content">
+    <h2>Novo Relato</h2>
 
-        <div class="relato-item">
-            <div class="relato-imagem">
-                <img src="/frontend/assets/feedbacks.jpg" alt="Relato de usuário">
-            </div>
-            <div class="relato-texto">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur nisl nec dapibus ullamcorper. Proin tempor turpis sit amet odio sollicitudin rutrum. Mauris suscipit eget ante eget tristique. Vivamus porta urna arcu.</p>
-                <div class="relato-autor">
-                    <p>- Maria de Souza</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="relato-item">
-            <div class="relato-imagem">
-                <img src="/frontend/assets/feedbacks.jpg" alt="Relato de usuário">
-            </div>
-            <div class="relato-texto">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur nisl nec dapibus ullamcorper. Proin tempor turpis sit amet odio sollicitudin rutrum. Mauris suscipit eget ante eget tristique. Vivamus porta urna arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer sodales quis ipsum at laoreet. Donec bibendum ex molestie, finibus mi quis, ornare tellus. Vivamus sed risus a sapien molestie mollis. Pellentesque enim lectus, gravida nec erat at, euismod eleifend diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur nisl nec dapibus ullamcorper. Proin tempor turpis sit amet odio sollicitudin rutrum.</p>
-                <div class="relato-autor">
-                    <p>- Pedro Santos</p>
-                </div>
-            </div>
-        </div>
+    <label>Como foi a sua experiência nas oficinas?</label>
+    <textarea id="relatoTexto" required placeholder="Escreva aqui seu relato"></textarea>
+
+    <div class="modal-actions">
+      <button id="btnSalvarRelato">Salvar</button>
+      <button class="btnFecharModal">Cancelar</button>
     </div>
-</main>
-    </main>
+  </div>
+</div>
 
+  </main>
+
+  <script src="/frontend/js/transformandovidas.js"></script>
 </body>
+
 </html>

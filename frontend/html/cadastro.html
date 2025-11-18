@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Voluntário</title>
-    <link rel="stylesheet" href="cadastros.css">
+    <link rel="stylesheet" href="/frontend/css/cadastros.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="cadastro-page">
     <header>
-       <a href="inicio.html"><img src="/frontend/assets/logodespertar.png" alt="Logo Despertar" class="logo"> </a> 
+        <a href="inicio.html">
+            <img src="/frontend/assets/logodespertar.png" alt="Logo Despertar" class="logo">
+        </a>
     </header>
 
     <main class="cadastro">
         <h2>CADASTRE-SE COMO VOLUNTÁRIO</h2>
-        <form>
+
+        <form id="form-cadastro">
+
             <div class="campo">
                 <label for="email">Digite seu e-mail</label>
-                <input type="email" id="email" placeholder="E-mail">
+                <input type="email" id="email" placeholder="E-mail" required>
             </div>
 
             <div class="campo">
                 <label for="nome">Digite seu nome</label>
-                <input type="text" id="nome" placeholder="Nome">
+                <input type="text" id="nome" placeholder="Nome completo" required>
+            </div>
+
+            <div class="campo">
+                <label for="dataNascimento">Data de nascimento</label>
+                <input type="date" id="dataNascimento" required>
             </div>
 
             <div class="campo">
@@ -31,8 +42,8 @@
             </div>
 
             <div class="campo">
-                <label for="endereco">Qual o seu endereço</label>
-                <input type="text" id="endereco" placeholder="Endereço">
+                <label for="cidade">Qual a sua cidade?</label>
+                <input type="text" id="cidade" placeholder="Cidade">
             </div>
 
             <div class="campo">
@@ -41,13 +52,64 @@
             </div>
 
             <div class="campo">
-                <label for="senha">Defina sua senha</label>
-                <input type="password" id="senha" placeholder="Senha">
+                <label for="possuiFormacao">Você possui alguma formação?</label>
+                <select id="possuiFormacao">
+                    <option value="">Selecione</option>
+                    <option value="true">Sim</option>
+                    <option value="false">Não, mas tenho interesse em ajudar</option>
+                </select>
             </div>
 
-            <button type="button" class="botao">CADASTRAR</button>
+            <div class="campo" id="campoFormacao" style="display: none;">
+                <label for="formacao">Qual é a sua formação?</label>
+                <select id="formacao">
+                    <option value="">Selecione sua formação</option>
+                    <option value="Pedagogia">Pedagogia</option>
+                    <option value="Psicologia">Psicologia</option>
+                    <option value="Serviço Social">Serviço Social</option>
+                    <option value="Educação Física">Educação Física</option>
+                    <option value="Artes Visuais">Artes Visuais</option>
+                    <option value="Música">Música</option>
+                    <option value="Dança">Dança</option>
+                    <option value="Teatro">Teatro</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label for="areaAtuacao">Em qual área você gostaria de atuar ou ajudar?</label>
+                <select id="areaAtuacao">
+                    <option value="">Selecione uma área</option>
+                    <option value="Todas">De forma geral (todas as áreas)</option>
+                    <option value="Artes">Artes</option>
+                    <option value="Dança">Dança</option>
+                    <option value="Música">Música</option>
+                    <option value="Esportes">Esportes</option>
+                    <option value="Leitura">Leitura</option>
+                    <option value="Projeto de Vida">Projeto de Vida</option>
+                    <option value="Saúde e Bem-estar">Saúde e Bem-estar</option>
+                    <option value="Educação">Educação</option>
+                    <option value="Outros">Outros</option>
+                </select>
+            </div>
+
+        
+            <div class="campo foto-upload">
+                <img id="preview-foto" class="foto-preview" src="/frontend/assets/perfil.jpg" alt="Prévia da foto">
+                <label for="foto">Escolha sua foto de perfil</label>
+                <input type="file" id="foto" accept="image/*">
+            </div>
+
+            <div class="campo">
+                <label for="senha">Defina sua senha</label>
+                <input type="password" id="senha" placeholder="Senha" required>
+            </div>
+
+            <button type="submit" class="botao">CADASTRAR</button>
         </form>
     </main>
-    <script src="cadastro.js"></script>
+
+    <script src="/frontend/js/cadastro.js"></script>
 </body>
+
 </html>

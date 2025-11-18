@@ -1,73 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despertar - Informações da Comunidade</title>
-    <link rel="stylesheet" href="minhasinfoscomunidade.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Comunidade</title>
+  <link rel="stylesheet" href="/frontend/css/minhasinfoscomunidade.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
 
-    <header>
-        <a href="inicio.html">
-            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
-        </a>
+  <header>
+    <a href="inicio.html">
+      <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar" />
+    </a>
+    <div id="menu-container">
+      <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon" />
+      <nav id="dropdown-menu">
+        <a href="inicio.html">Página Inicial</a>
+        <a href="chat.html">Chat</a>
+        <a href="comunidade.html">Painel</a>
+        <a href="transformandovidas.html">Relatos</a>
+        <a href="inicio.html">Sair</a>
+      </nav>
+    </div>
+  </header>
 
-        <div id="menu-container">
-            <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon">
-            <div id="dropdown-menu">
-                <a href="comunidade.html">Página Inicial</a>
-                <a href="">Chat</a>
-                <a href="transformandovidas.html">Relatos</a>
-                <a href="inicio.html">Sair</a>
-            </div>
-        </div>
-    </header>
+  <main class="perfil-container">
+    <h1>MINHA COMUNIDADE</h1>
 
-    <main class="main-container">
-        <h1>Informações da Comunidade</h1>
+    <section class="perfil-card">
+      
+      <h2 id="nome-comunidade"></h2>
+      <p id="email-comunidade"></p>
 
-        <section class="community-card">
-            <div class="community-header">
-                <img src="/frontend/assets/comunidade.jpeg" alt="Imagem da Comunidade" class="community-pic">
-                <div class="community-info">
-                    <h2>Comunidade Vila Feliz</h2>
-                    <p>Membro desde: [Data]</p>
-                </div>
-            </div>
+      <div class="info-lista">
+        <p><strong>Responsável:</strong> <span id="responsavel"></span></p>
+        <p><strong>Telefone:</strong> <span id="telefone"></span></p>
+        <p><strong>Endereço:</strong> <span id="endereco"></span></p>
+        <p><strong>Nº de Crianças/Jovens:</strong> <span id="num-jovens"></span></p>
+        <p><strong>Faixa Etária:</strong> <span id="faixa-etaria"></span></p>
+        <p><strong>Estrutura Física:</strong> <span id="estrutura"></span></p>
+        <p><strong>Descrição:</strong> <span id="descricao"></span></p>
+      </div>
 
-            <div class="community-details">
-                <h3>Descrição</h3>
-                <p class="community-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus deleniti, architecto possimus ullam modi sapiente accusamus voluptate totam sed qui adipisci cum praesentium, magnam esse quibusdam voluptatum eaque pariatur nemo.</p>
+      <button id="editarPerfil">Editar Perfil</button>
+    </section>
+  </main>
 
-                <h3>Dados de Interesse</h3>
-                <div class="info-item">
-                    <span class="info-label">Localização:</span>
-                    <p class="info-value">Bairro Central, Rua da Esperança, 456</p>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Número de Crianças:</span>
-                    <p class="info-value">Aproximadamente 50 crianças</p>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Faixa Etária:</span>
-                    <p class="info-value">6 a 15 anos</p>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Estrutura Física:</span>
-                    <p class="info-value">Temos 3 salas de aula, 1 quadra coberta e 1 biblioteca</p>
-                </div>
-                <div class="profile-actions">
-                    <button class="btn-edit" onclick="toggleEditMode()">Editar Perfil</button>
-                    <button class="btn-save" style="display: none;">Salvar Alterações</button>
-                </div>
-            </div>
-        </section>
-    </main>
-<script src="minhasinfoscomunidade.js"></script>
+  <div id="modal-editar" class="modal">
+    <div class="modal-conteudo">
+      <span id="fechar-modal" class="fechar">&times;</span>
+      <h2>Editar Comunidade</h2>
+
+      <form id="form-editar">
+
+        <label>Nome da Comunidade</label>
+        <input type="text" id="edit-nome" required />
+
+        <label>Responsável</label>
+        <input type="text" id="edit-responsavel" required />
+
+        <label>Email</label>
+        <input type="email" id="edit-email" required />
+
+        <label>Telefone</label>
+        <input type="text" id="edit-telefone" />
+
+        <label>Endereço</label>
+        <input type="text" id="edit-endereco" />
+
+        <label>Nº de Crianças/Jovens</label>
+        <input type="number" id="edit-num-jovens" />
+
+        <label>Faixa Etária Predominante</label>
+        <select id="edit-faixa-etaria">
+  <option value="0-5 Anos">0-5 Anos</option>
+  <option value="6-12 Anos">6-12 Anos</option>
+  <option value="13-18 Anos">13-18 Anos</option>
+  <option value="Mista">Mista</option>
+</select>
+
+        <label>Possui Estrutura Física?</label>
+        <select id="edit-estrutura">
+          <option value="1">Sim</option>
+          <option value="0">Não</option>
+        </select>
+
+        <label>Descrição</label>
+        <textarea id="edit-descricao"></textarea>
+
+        <label>Senha</label>
+        <input type="password" id="edit-senha" required />
+
+        <button type="submit">Salvar</button>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="/frontend/js/minhasinfoscomunidade.js"></script>
 </body>
-
 </html>

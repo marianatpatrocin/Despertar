@@ -1,69 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Despertar - Minhas Informações</title>
-    <link rel="stylesheet" href="minhasinfos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil - Voluntário</title>
+  <link rel="stylesheet" href="/frontend/css/minhasinfos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-    <header>
-        <a href="inicio.html">
-            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
-        </a>
-        
-        <div id="menu-container">
-            <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon">
-            <div id="dropdown-menu">
-            <a href="voluntario.html">Página Inicial</a>
-            <a href="">Chat</a>
-            <a href="">Próximas atividades perto de mim</a>
-            <a href="transformandovidas.html">Relatos</a>
-            <a href="inicio.html">Sair</a>
-            </div>
-        </div>
-    </header>
+  <header>
+    <a href="inicio.html">
+      <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar" />
+    </a>
+    <div id="menu-container">
+      <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon" />
+      <nav id="dropdown-menu">
+        <a href="inicio.html">Página Inicial</a>
+        <a href="chat.html">Chat</a>
+        <a href="voluntario.html">Painel</a>
+        <a href="transformandovidas.html">Relatos</a>
+        <a href="inicio.html">Sair</a>
+      </nav>
+    </div>
+  </header>
 
-    <main class="main-container">
-        <h1>Meu Perfil</h1>
+  <main class="perfil-container">
+    <h1>MEU PERFIL</h1>
 
-        <section class="profile-card">
-            <div class="profile-header">
-                <img src="/frontend/assets/perfil.webp" class="profile-pic">
-                <div class="profile-info">
-                    <h2 id="profile-name">Nome do Voluntário</h2>
-                    <p id="profile-email">exemplo@email.com</p>
-                </div>
-            </div>
-            
-            <div class="profile-details">
-                <div class="info-item">
-                    <span class="info-label">Telefone:</span>
-                    <p class="info-value" id="profile-phone">(XX) XXXXX-XXXX</p>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Endereço:</span>
-                    <p class="info-value" id="profile-address">Rua do Exemplo, 123</p>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Data de Nascimento:</span>
-                    <p class="info-value" id="profile-dob">DD/MM/AAAA</p>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Cidade:</span>
-                    <p class="info-value" id="profile-city">Cidade Exemplo</p>
-                </div>
-            </div>
+    <section class="perfil-card">
+      <div class="foto-container">
+        <img id="foto-perfil" src="/frontend/assets/perfil.jpg" alt="Foto do Voluntário" title="Clique para alterar a foto" />
+        <input type="file" id="input-foto" accept="image/*" style="display:none;">
+      </div>
+      <h2 id="nome-voluntario">Carregando...</h2>
+      <p id="email-voluntario">—</p>
 
-            <div class="profile-actions">
-                <button class="btn-edit" onclick="toggleEditMode()">Editar Perfil</button>
-                <button class="btn-save" style="display: none;">Salvar Alterações</button>
-            </div>
-        </section>
-    </main>
+      <div class="info-lista">
+        <p><strong>Telefone:</strong> <span id="telefone">—</span></p>
+        <p><strong>Cidade:</strong> <span id="cidade">—</span></p>
+        <p><strong>Data de Nascimento:</strong> <span id="nascimento">—</span></p>
+        <p><strong>Formação:</strong> <span id="formacao">—</span></p>
+        <p><strong>Área que gostaria de atuar ou ajudar:</strong> <span id="areaAtuacao">—</span></p>
+        <p><strong>Biografia:</strong> <span id="descricao">—</span></p>
+      </div>
 
-    <script src="minhasinfos.js"></script>
+      <button id="editarPerfil">Editar Perfil</button>
+    </section>
+  </main>
+
+  <!-- Modal de Edição -->
+  <div id="modal-editar" class="modal">
+    <div class="modal-conteudo">
+      <span id="fechar-modal" class="fechar">&times;</span>
+      <h2>Editar Perfil</h2>
+      <form id="form-editar">
+        <label for="edit-nome">Nome</label>
+        <input type="text" id="edit-nome" required />
+
+        <label for="edit-nascimento">Data de Nascimento</label>
+        <input type="date" id="edit-nascimento" />
+
+        <label for="edit-telefone">Telefone</label>
+        <input type="text" id="edit-telefone" />
+
+        <label for="edit-email">Email</label>
+        <input type="email" id="edit-email" required />
+
+        <label for="edit-cidade">Cidade</label>
+        <input type="text" id="edit-cidade" />
+
+        <label for="edit-possui-formacao">Possui Formação?</label>
+        <select id="edit-possui-formacao">
+          <option value="true">Sim</option>
+          <option value="false">Não</option>
+        </select>
+
+        <label for="edit-formacao">Formação</label>
+        <select id="edit-formacao">
+          <option value="">Selecione</option>
+          <option value="Pedagogia">Pedagogia</option>
+          <option value="Psicologia">Psicologia</option>
+          <option value="Serviço Social">Serviço Social</option>
+          <option value="Educação Física">Educação Física</option>
+        </select>
+
+        <label for="edit-area-atuacao">Área que gostaria de atuar ou ajudar</label>
+        <select id="edit-area-atuacao">
+          <option value="">Selecione</option>
+          <option value="Leitura">Leitura</option>
+          <option value="Esporte">Esporte</option>
+          <option value="Artes">Artes</option>
+          <option value="Tecnologia">Tecnologia</option>
+          <option value="Qualquer área">Qualquer área</option>
+        </select>
+
+        <label for="edit-descricao">Biografia</label>
+        <textarea id="edit-descricao"></textarea>
+
+        <label for="edit-senha">Senha</label>
+        <input type="password" id="edit-senha" required />
+
+        <button type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/frontend/js/minhasinfos.js"></script>
 </body>
 </html>
