@@ -1,83 +1,105 @@
-# 📆 Calendário de Desenvolvimento – Projeto Profissional
+# Despertar — Plataforma de Conexão entre Voluntários e Comunidades
 
-*Aluno:* Mariana Toledo Patrocin
-*Título do Projeto:* Plataforma Despertar  
-*Repositório:* [URL do GitHub]  
-*Professor Orientador:* Iuri e André 
-*Período:* Maio a Novembro de 2025  
+O Despertar é uma plataforma web desenvolvida para conectar voluntários a comunidades carentes, facilitando o agendamento de oficinas educativas, atividades culturais e ações sociais.
+O projeto utiliza HTML, CSS e JavaScript no frontend, Node.js no backend e MySQL como banco de dados.
 
 ---
 
-## 🗓️ MAIO – Planejamento e Início do Back-end
-
-- [ ] Escolher stack: Node.js, MySQL, HTML/CSS/JS
-- [ ] Criar repositório no GitHub com README descritivo
-- [ ] Estruturar diretórios (backend, frontend, database)
-- [ ] Modelar banco de dados e criar diagrama ER/MER
-- [ ] Criar tabelas: usuários, comunidades, atividades, mensagens, avaliações
-- [ ] Iniciar front-end com base no Figma
-
----
-
-## 🗓️ JUNHO – Desenvolvimento e Deploy do Back-end
-
-- [ ] Criar rotas de navegação (Home, Cadastro, Login, Missão, Relatos)
-- [ ] Adicionar autenticação (login com JWT)
-- [ ] Implementar middleware de autorização
-- [ ] Criar relacionamento entre entidades (voluntário ↔ comunidade ↔ atividade)
-- [ ] Finalizar rotas da API REST
-- [ ] Criar documentação de rotas (Swagger ou Markdown)
+## Sumário
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias](#tecnologias)
+- [Estrutura do Projeto](#estrutura-do-projeto)
+- [Como Rodar](#como-rodar)
+- [Melhorias Futuras](#melhorias-futuras)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
 ---
 
-## 🗓️ JULHO – Front-end e Integração com a API
-
-- [ ] Conectar com API (axios/fetch)
-- [ ] Criar formulários para cadastro de voluntários e comunidades
-- [ ] Exibir atividades e permitir agendamento
-- [ ] Aplicar estilo responsivo e acessível
+## Sobre o Projeto
+O Despertar foi criado com o propósito de aproximar pessoas dispostas a oferecer tempo e conhecimento de comunidades que necessitam de apoio educacional e social.  
+A plataforma permite cadastrar voluntários, comunidades e oficinas, além de editar e listar todos esses dados de forma simples e organizada.
 
 ---
 
-## 🗓️ AGOSTO – Testes e Melhorias
+## Funcionalidades
 
-- [ ] Testar fluxos principais (cadastro, login, busca, agendamento)
-- [ ] Corrigir falhas no layout e funcionalidades
-- [ ] Tratar erros de autenticação, campos obrigatórios e mensagens de retorno
-- [ ] Implementar melhorias visuais e de usabilidade
-- [ ] Entregar primeira versão funcional da plataforma
+### Voluntários
+- Cadastro  
+- Listagem  
+- Edição  
+- Exclusão
+- Chat 
 
----
+### Comunidades
+- Cadastro  
+- Listagem  
+- Edição  
+- Exclusão
+- Chat
 
-## 🗓️ SETEMBRO – Documentação e Revisão
-
-- [ ] Atualizar artigo com imagens da aplicação
-- [ ] Gravar vídeo demonstrativo (opcional)
-- [ ] Documentar código (comentários e estrutura dos arquivos)
-- [ ] Checklist final das funcionalidades
-
----
-
-## 🗓️ OUTUBRO – Apresentação Final
-
-- [ ] Criar slides de apresentação (missão, funcionamento, telas, impactos)
-- [ ] Ensaiar apresentação com tempo estimado de 10 minutos
-- [ ] Apresentar para banca simulada (se houver)
-- [ ] Realizar apresentação final
+### Oficinas
+- Cadastro  
+- Visualização  
+- Agendamento  
+- Edição  
+- Exclusão  
 
 ---
 
-## 🗓️ NOVEMBRO – Finalização e Entrega
+## Tecnologias
 
-- [ ] Revisar artigo e garantir formatação correta
-- [ ] Entregar link do GitHub e documentação
-- [ ] Fazer backup do banco e da aplicação
-- [ ] Receber avaliação final
+### Frontend
+- HTML5  
+- CSS3  
+- JavaScript  
+
+### Backend
+- Node.js  
+- Express  
+- MySQL  
+- Body-parser  
+- CORS  
+
+### Banco de Dados
+- MySQL  
+- Script SQL localizado em `/database/despertar.sql`
 
 ---
+## Como rodar o projeto
 
-## 📌 Anotações
+### Pré-requisitos
+Antes de começar, você precisa ter instalado:
+- **Node.js** (versão LTS recomendada)
+- **MySQL** (ou MariaDB)
+- **Git** (opcional, caso esteja usando controle de versão)
 
-**Data do próximo check-in:** ___/___/____  
-**Dificuldades enfrentadas:**  
-**Próximas metas:**  
+### 1. Clonar o repositório
+```bash
+git clone https://github.com/marianatpatrocin/Despertar.git
+cd Despertar
+
+### 2. Instalar dependências
+npm install
+
+###3. Configurar o banco de dados
+
+Crie um banco no MySQL:
+
+CREATE DATABASE Despertar;
+
+### 4. Configure o arquivo .env com suas credenciais:
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=sua_senha
+DB_DATABASE=Despertar
+PORT=3000
+
+### 5. Iniciar o servidor
+npm start
+
+### 6. Acessar o sistema
+Abra no navegador:
+http://localhost:3000
