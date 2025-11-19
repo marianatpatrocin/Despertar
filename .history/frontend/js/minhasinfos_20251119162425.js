@@ -188,7 +188,7 @@ async function salvarEdicao(e, usuarioId) {
 
   const updateBody = {
     nome: document.getElementById('edit-nome').value.trim(),
-    data_nascimento: document.getElementById('edit-nascimento').value || null,
+    data_nascimento: document.getElementById('edit-nascimento').value,
     telefone: document.getElementById('edit-telefone').value.trim(),
     email: document.getElementById('edit-email').value.trim(),
     cidade: document.getElementById('edit-cidade').value.trim(),
@@ -196,7 +196,8 @@ async function salvarEdicao(e, usuarioId) {
     formacao: document.getElementById('edit-formacao').value || null,
     area_atuacao: document.getElementById('edit-area-atuacao').value || null,
     descricao: document.getElementById('edit-descricao').value.trim() || null,
-    senha: document.getElementById('edit-senha').value
+    senha: document.getElementById('edit-senha').value,
+    foto: perfilData && perfilData.foto ? perfilData.foto : null
   };
 
   console.log('Dados para atualizar:', {...updateBody, senha: '****'});
@@ -221,7 +222,7 @@ async function salvarEdicao(e, usuarioId) {
       await carregarPerfil(usuarioId);
       console.log('Perfil recarregado após edição');
     } else {
-      alert('Erro ao atualizar perfil: ' + (data.message || 'Erro desconhecido') + (data.data ? '\n' + JSON.stringify(data.data) : ''));
+      alert('Erro ao atualizar perfil: ' + (data.message || 'Erro desconhecido'));
     }
   } catch (err) {
     console.error('Erro ao atualizar:', err);

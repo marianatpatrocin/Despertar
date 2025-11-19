@@ -188,7 +188,7 @@ async function salvarEdicao(e, usuarioId) {
 
   const updateBody = {
     nome: document.getElementById('edit-nome').value.trim(),
-    data_nascimento: document.getElementById('edit-nascimento').value || null,
+    data_nascimento: document.getElementById('edit-nascimento').value,
     telefone: document.getElementById('edit-telefone').value.trim(),
     email: document.getElementById('edit-email').value.trim(),
     cidade: document.getElementById('edit-cidade').value.trim(),
