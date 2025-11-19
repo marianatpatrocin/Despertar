@@ -75,8 +75,8 @@ Antes de começar, você precisa ter instalado:
 - **MySQL** (ou MariaDB)
 - **Git** (opcional, caso esteja usando controle de versão)
 
-### 1. Clonar o repositório
 ```bash
+### 1. Clonar o repositório
 git clone https://github.com/marianatpatrocin/Despertar.git
 cd Despertar
 
