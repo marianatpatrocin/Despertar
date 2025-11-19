@@ -1,0 +1,420 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #f4f0ec;
+    padding-top: 100px;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f4f0ec;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.logo {
+    height: 80px;
+}
+
+#menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+#menu-icon {
+    height: 50px;
+    width: auto;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+#menu-icon:hover { opacity: 0.8; }
+
+#dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1;
+}
+
+#menu-container:hover #dropdown-menu { display: block; }
+
+#dropdown-menu a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+#dropdown-menu a:hover {
+    background-color: #e7f3f1;
+    color: #00796b;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: #00796b;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8em;
+}
+
+.admin-panel {
+    margin-top: 30px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.btn-criar-atividade {
+    background-color: #40E0D0;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-criar-atividade:hover { background-color: #33c0b1; }
+
+#lista-atividades-admin {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.atividade-item-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.atividade-info h3 {
+    margin-top: 0;
+    color: #00796b;
+    font-size: 1.3em;
+}
+
+.atividade-info p { margin: 5px 0; }
+
+.atividade-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-action {
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    min-width: 110px;
+    text-align: center;
+    transition: opacity 0.3s ease;
+}
+
+.btn-action:hover { opacity: 0.85; }
+
+.editar { background-color: #f7a049; }
+.cancelar { background-color: #cc3333; }
+
+.btnEditar {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btnEditar:hover { background-color: #005fa3; }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal.hidden { display: none; }
+
+.modal-content {
+    background: white;
+    width: 400px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    text-align: left;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    color: #00796b;
+}
+
+.modal-content label {
+    font-weight: bold;
+    margin-top: 12px;
+    display: block;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;            
+    justify-content: space-between;
+    flex-wrap: wrap;      
+}
+
+.modal-actions button {
+    padding: 8px 12px;    
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: white;
+    flex: 1;              
+    text-align: center;
+}
+
+#salvarOficina { background-color: #40E0D0; }
+#btnSalvarEdicao { background-color: #f7a049; }
+.btnFecharModal { background-color: #ac00dc; }
+#btnExcluirOficinaModal {background-color: #cc3333;}
+
+
+.voluntarios-wrapper {
+    margin-top: 60px;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.voluntarios-wrapper h2 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 25px;
+    font-size: 1.9em;
+}
+
+.search-with-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+#voluntario-search {
+    width: 90%;
+    max-width: 650px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    font-size: 1em;
+}
+
+.filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 750px;
+}
+
+.filter-option {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: 1px solid #00796b;
+    background: white;
+    cursor: pointer;
+    font-size: 0.95em;
+    color: #00796b;
+    transition: all 0.3s ease;
+}
+
+.filter-option:hover { background-color: #e7f3f1; }
+
+.filter-option.active {
+    background-color: #40E0D0;
+    color: white;
+    border-color: #40E0D0;
+}
+
+#btnBuscarVoluntario {
+    background-color: #40E0D0;
+    padding: 13px 35px;
+    border-radius: 12px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#btnBuscarVoluntario:hover {
+    background-color: #33c0b1;
+}
+
+
+/* CARDS */
+#volunteers-list-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+#volunteers-list-container h3 {
+    grid-column: 1 / -1;
+    color: #00796b;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.voluntario-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    border-top: 5px solid #40E0D0;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.voluntario-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.voluntario-card p { margin: 8px 0; color: #555; }
+.voluntario-card strong { font-size: 1.2em; color: #00796b; }
+.voluntario-card em { font-style: normal; color: #40A0A0; font-weight: bold; }
+
+/* BOTÃO DE CONVIDAR */
+.btn-convidar {
+    margin-top: 12px;
+    background-color: #40E0D0;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-convidar:hover {
+    background-color: #33c0b1;
+    transform: scale(1.05);
+}
+
+/* ============================
+   RESPONSIVIDADE
+============================ */
+@media (max-width: 600px) {
+
+    .atividade-item-admin {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .atividade-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .btn-action {
+        width: 100%;
+    }
+
+    #volunteers-list-container {
+        grid-template-columns: 1fr;
+        padding: 5px;
+    }
+
+    .voluntario-card {
+        padding: 18px;
+    }
+
+    .btn-convidar {
+        width: 100%;
+    }
+}

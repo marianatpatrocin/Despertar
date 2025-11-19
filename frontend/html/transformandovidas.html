@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Despertar - Transformando Vidas</title>
+  <link rel="stylesheet" href="/frontend/css/transformandovidas.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <a href="inicio-logado.html">
+      <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar" />
+    </a>
+    <div id="menu-container">
+      <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon" />
+      <div id="dropdown-menu">
+        <a href="inicio-logado.html">Página Inicial</a>
+        <a href="#" id="link-minhas-infos">Minhas Informações</a>
+        <a href="chat.html">Chat</a>
+        <a href="#" id="link-painel">Painel</a>
+        <a href="transformandovidas.html">Relatos</a>
+        <a href="#" id="btn-sair">Sair</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <h1>Transformando Vidas</h1>
+    <h2 class="subtitulo">Relatos que Transformam</h2>
+
+    <img src="/frontend/assets/aviao.png" alt="Avião de papel" class="aviao" />
+
+    <a href="#" class="btn-adicionar" id="btnAbrirModal">
+      <span class="simbolo-mais">+</span>
+      Adicionar Relato
+    </a>
+
+    <div id="relatos-container" class="relatos-container">
+      <p>Carregando relatos...</p>
+    </div>
+
+   <div id="modalRelato" class="modal hidden">
+  <div class="modal-content">
+    <h2>Novo Relato</h2>
+
+    <label>Como foi a sua experiência nas oficinas?</label>
+    <textarea id="relatoTexto" required placeholder="Escreva aqui seu relato"></textarea>
+
+    <div class="modal-actions">
+      <button id="btnSalvarRelato">Salvar</button>
+      <button class="btnFecharModal">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <script src="/frontend/js/transformandovidas.js"></script>
+</body>
+
+</html>

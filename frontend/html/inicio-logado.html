@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar - Início</title>
+    <link rel="stylesheet" href="/frontend/css/inicio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos específicos para o header com menu dropdown */
+        header {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            padding: 10px 50px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fdfaf0;
+            z-index: 1000;
+        }
+
+        header a.logo-link {
+            grid-column: 2;
+            justify-self: center;
+        }
+
+        .logo {
+            height: 120px;
+            width: auto;
+        }
+
+        #menu-container {
+            grid-column: 3;
+            justify-self: end;
+            position: relative;
+        }
+
+        #menu-icon {
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #menu-icon:hover {
+            transform: scale(1.05);
+        }
+
+        #dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            background-color: #fff;
+            min-width: 220px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        #dropdown-menu.show {
+            display: block;
+        }
+
+        #dropdown-menu a {
+            display: block;
+            padding: 14px 20px;
+            text-decoration: none;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        #dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+
+        #dropdown-menu a:hover {
+            background-color: #ff8001;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="inicio-logado.html" class="logo-link">
+            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
+        </a>
+        <div id="menu-container">
+            <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon" />
+            <nav id="dropdown-menu">
+                <a href="inicio-logado.html">Página Inicial</a>
+                <a href="chat.html">Chat</a>
+                <a href="#" id="link-painel">Painel</a>
+                <a href="transformandovidas.html">Relatos</a>
+                <a href="#" id="btn-sair">Sair</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="section-top">
+            <h1>Transformando vidas através da educação!</h1>
+        </div>
+        
+        <div class="section-bottom">
+            <div class="botoes">
+                <a href="missao.html" class="botao missao">Nossa Missão</a>
+                <a href="transformandovidas.html" class="botao vidas">Transformando Vidas</a>
+                <a href="cadastro.html" class="botao voluntario">Quero ser voluntário</a>
+                <a href="cadastrocomunidade.html" class="botao localidade">Quero cadastrar minha localidade</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Verificar se há usuário logado
+        const usuarioLogado = JSON.parse(localStorage.getItem('usuarioLogado'));
+
+        if (!usuarioLogado) {
+            // Se não estiver logado, redirecionar para página inicial normal
+            window.location.href = 'inicio.html';
+        } else {
+            // Configurar link do painel baseado no tipo de usuário
+            const linkPainel = document.getElementById('link-painel');
+            if (linkPainel) {
+                if (usuarioLogado.tipo === 'voluntario') {
+                    linkPainel.href = 'voluntario.html';
+                } else if (usuarioLogado.tipo === 'comunidade') {
+                    linkPainel.href = 'comunidade.html';
+                }
+            }
+        }
+
+        // Configurar logout
+        const btnSair = document.getElementById('btn-sair');
+        if (btnSair) {
+            btnSair.addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('usuarioLogado');
+                alert('Logout realizado com sucesso!');
+                window.location.href = 'inicio.html';
+            });
+        }
+
+        // Menu dropdown
+        const menuIcon = document.getElementById('menu-icon');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+
+        if (menuIcon && dropdownMenu) {
+            menuIcon.addEventListener('click', () => {
+                dropdownMenu.classList.toggle('show');
+            });
+
+            // Fechar menu ao clicar fora
+            window.addEventListener('click', (e) => {
+                if (!e.target.matches('#menu-icon') && !e.target.closest('#dropdown-menu')) {
+                    dropdownMenu.classList.remove('show');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

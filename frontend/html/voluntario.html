@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar - Painel do Voluntário</title>
+    <link rel="stylesheet" href="/frontend/css/voluntario.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+      <header>
+    <a href="inicio-logado.html">
+      <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar" />
+    </a>
+    <div id="menu-container">
+      <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon" />
+      <nav id="dropdown-menu">
+        <a href="inicio-logado.html">Página Inicial</a>
+        <a href="minhasinfos.html">Minhas Informações</a>
+        <a href="chat.html">Chat</a>
+        <a href="voluntario.html">Painel</a>
+        <a href="transformandovidas.html">Relatos</a>
+        <a href="#" id="btn-sair">Sair</a>
+      </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <h1>Bem-vindo, <span id="nome-voluntario"></span>!</h1>
+
+        <section class="dashboard-section">
+            <h2>Comunidades Próximas</h2>
+            <div class="lista-comunidades" id="lista-comunidades">
+                <p>Carregando comunidades próximas...</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Minhas Candidaturas</h2>
+            <div class="lista-candidaturas" id="lista-candidaturas">
+                <p>Carregando suas candidaturas...</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Minhas Oficinas</h2>
+            <p style="font-size: 0.9rem; color: #666; margin-bottom: 10px;">Oficinas das comunidades onde você se candidatou</p>
+            <div class="lista-oficinas" id="lista-oficinas">
+                <p>Carregando oficinas...</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <h2>Convites Recebidos</h2>
+            <div class="lista-convites" id="lista-convites">
+                <p>Você ainda não recebeu convites de comunidades.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="/frontend/js/voluntario.js"></script>
+</body>
+
+</html>

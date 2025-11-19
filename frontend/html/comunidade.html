@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despertar - Painel da Comunidade</title>
+    <link rel="stylesheet" href="../css/comunidade.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+        <a href="inicio-logado.html">
+            <img src="/frontend/assets/logodespertar.png" class="logo" alt="Logo Despertar">
+        </a>
+
+        <button id="menu-icon" aria-label="Menu de Navegação">
+            <span class="menu-bar"></span>
+        </button>
+
+        <div id="menu-container">
+            <img src="/frontend/assets/menu.png" alt="Menu" id="menu-icon">
+            <div id="dropdown-menu">
+                <a href="inicio-logado.html">Página Inicial</a>
+                <a href="minhasinfoscomunidade.html">Minhas Informações</a>
+                <a href="chat.html">Chat</a>
+                <a href="comunidade.html">Painel</a>
+                <a href="transformandovidas.html">Relatos</a>
+                <a href="#" id="btn-sair">Sair</a>
+            </div>
+        </div>
+    </header>
+
+
+    <main class="main-container">
+        <h1>Minha Comunidade</h1>
+
+        <section class="admin-panel">
+            <div class="panel-header">
+                <h2>Oficinas Marcadas</h2>
+                <button class="btn-criar-atividade" id="btnNovaOficina">+ Nova Oficina</button>
+            </div>
+
+            <div id="lista-atividades-admin">
+            </div>
+        </section>
+
+        <div class="voluntarios-wrapper">
+            <h2>Encontre Voluntários</h2>
+
+
+            <div class="search-with-filters">
+                <input type="text" id="voluntario-search" placeholder="Digite uma área ou habilidade...">
+                <div class="filters-container">
+                    <button class="filter-option">Artes</button>
+                    <button class="filter-option">Dança</button>
+                    <button class="filter-option">Música</button>
+                    <button class="filter-option">Esportes</button>
+                    <button class="filter-option">Leitura</button>
+                    <button class="filter-option">Projeto de Vida</button>
+                    <button class="filter-option">Saúde e Bem-estar</button>
+                    <button class="filter-option">Educação</button>
+                    <button class="filter-option">Outros</button>
+                    <button class="filter-option active">Todas</button>
+                </div>
+                <button id="btnBuscarVoluntario">Buscar</button>
+            </div>
+
+
+            <div id="volunteers-list-container">
+                <h3>Resultados da Busca</h3>
+            </div>
+        </div>
+
+        <div id="modalNovaOficina" class="modal hidden">
+            <div class="modal-content">
+                <h2>Criar Oficina</h2>
+
+                <label>Título</label>
+                <input id="oficinaTitulo" type="text">
+
+                <label>Data</label>
+                <input id="oficinaData" type="date">
+
+                <label>Horário</label>
+                <input id="oficinaHorario" type="time">
+
+                <label>Local</label>
+                <input id="oficinaLocal" type="text">
+
+                <div class="modal-actions">
+                    <button id="salvarOficina">Salvar</button>
+                    <button class="btnFecharModal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalEditarOficina" class="modal hidden">
+            <div class="modal-content">
+                <h2>Editar Oficina</h2>
+                <input type="hidden" id="editId">
+                <label>Título</label>
+                <input id="editTitulo" type="text">
+                <label>Data</label>
+                <input id="editData" type="date">
+                <label>Horário</label>
+                <input id="editHorario" type="time">
+                <label>Local</label>
+                <input id="editLocal" type="text">
+                <div class="modal-actions">
+                    <button id="btnSalvarEdicao">Salvar Alterações</button>
+                    <button id="btnExcluirOficinaModal">Cancelar oficina</button>
+                    <button class="btnFecharModal">Fechar</button>
+                </div>
+            </div>
+        </div>
+        </main>
+
+        <script src="/frontend/js/comunidade.js"></script>
+</body>
+
+</html>

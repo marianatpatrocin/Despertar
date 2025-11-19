@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro comunidade</title>
+    <link rel="stylesheet" href="/frontend/css/cadastros.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="cadastro-page">
+    <header>
+        <a href="inicio.html"><img src="/frontend/assets/logodespertar.png" alt="Logo Despertar" class="logo"> </a>
+    </header>
+    <main class="cadastro">
+        <h2>CADASTRE-SE SUA COMUNIDADE</h2>
+        <form id="form-cadastro-comunidade">
+
+    <div class="campo">
+        <label for="nome_comunidade">Digite o nome da sua comunidade/bairro</label>
+        <input type="text" id="nome_comunidade" placeholder="Nome da comunidade ou bairro" required>
+    </div>
+
+    <div class="campo">
+        <label for="nome_responsavel">Digite o nome do responsável pela comunidade (quem está criando a conta)</label>
+        <input type="text" id="nome_responsavel" placeholder="Nome do Responsável" required>
+    </div>
+
+    <div class="campo">
+        <label for="email">Digite seu email</label>
+        <input type="text" id="email" placeholder="E-mail" required>
+    </div>
+
+    <div class="campo">
+        <label for="telefone">Digite seu telefone</label>
+        <input type="tel" id="telefone" placeholder="Telefone">
+    </div>
+
+    <div class="campo">
+        <label for="endereco">Qual o seu endereço</label>
+        <input type="text" id="endereco" placeholder="Endereço">
+    </div>
+
+    <div class="campo">
+        <label for="num_criancas_jovens">Número aproximado de crianças/jovens</label>
+        <input type="number" id="num_criancas_jovens" placeholder="Aprox. 50">
+    </div>
+
+    <div class="campo">
+        <label for="faixa_etaria_aprox">Faixa etária predominante</label>
+        <select id="faixa_etaria_aprox" required>
+            <option value="" disabled selected>Selecione a faixa etária</option>
+            <option value="0-5 Anos">0-5 Anos</option>
+            <option value="6-12 Anos">6-12 Anos</option>
+            <option value="13-18 Anos">13-18 Anos</option>
+            <option value="Mista">Mista</option>
+        </select>
+    </div>
+
+    <div class="campo">
+        <label for="possui_estrutura">Possuem estrutura física para receber oficinas?</label>
+        <select id="possui_estrutura" required>
+            <option value="1">Sim</option>
+            <option value="0">Não</option>
+        </select>
+    </div>
+
+    <div class="campo">
+        <label for="descricao">Conte sobre sua comunidade</label>
+        <textarea id="descricao" placeholder="Fale um pouco sobre sua comunidade"></textarea>
+    </div>
+
+    <div class="campo">
+        <label for="senha">Defina sua senha</label>
+        <input type="password" id="senha" placeholder="Senha" required>
+    </div>
+
+    <button type="submit" class="botao">CADASTRAR</button>
+
+</form>
+
+    </main>
+    <script src="/frontend/js/cadastrocomunidade.js"></script>
+</body>
+
+</html>
